@@ -1,18 +1,6 @@
-function add(n1, n2) {
-    return n1 + n2;
+var userInput;
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-function printResult(num) {
-    console.log('Result: ' + num);
-}
-function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
-    cb(result);
-}
-addAndHandle(10, 20, function (result) {
-    console.log(result);
-    return result;
-});
-var combineValues;
-combineValues = add;
-console.log(combineValues(8, 8));
-printResult(add(5, 12));
+var result = generateError('エラーが発生しました', 500);
+console.log(result);
